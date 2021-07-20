@@ -27,22 +27,10 @@ namespace ChangeRequests
 
         private void ProcessVehicleChangeRequest()
         {
-            foreach (var vehicleChangeRequest in ChangeRequest.VehicleChangeRequests)
-            {
-                switch (vehicleChangeRequest.Operation)
-                {
-                    case Operations.Add:
-                        AddVehicle(vehicleChangeRequest.Vehicles);
-                        break;
-                    case Operations.Delete:
-                        DeleteVehicle(vehicleChangeRequest.Vehicles);
-                        break;
-                    case Operations.Update:
-                        UpdateVehicle(vehicleChangeRequest.Vehicles);
-                        break;
-                    default: break;
-                }
-            }
+            AddVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Add).Vehicles);
+            DeleteVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Delete).Vehicles);
+            UpdateVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Update).Vehicles);           
+            
         }
 
         
