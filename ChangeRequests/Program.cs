@@ -26,7 +26,7 @@
             var changeRequest = new ChangeRequest
             {
                 DriverChanngeRequests = { driverChangeRequest },
-                VehicleChanngeRequests = { vehicleChangeRequest }
+                VehicleChangeRequests = { vehicleChangeRequest }
             };
             var changeRequestSchedule = new ChangeRequestSchedule
             {

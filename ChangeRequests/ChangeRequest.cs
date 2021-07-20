@@ -11,8 +11,8 @@ namespace ChangeRequests
     }
     public class ChangeRequest
     {
-        public List<DriverChangeRequest> DriverChanngeRequests { get; set; }
-        public List<VehicleChangeRequest> VehicleChanngeRequests { get; set; }
+        public List<DriverChangeRequest> DriverChangeRequests { get; set; }
+        public List<VehicleChangeRequest> VehicleChangeRequests { get; set; }
 
     }
 
@@ -27,7 +27,7 @@ namespace ChangeRequests
 
         private void ProcessVehicleChangeRequest()
         {
-            foreach (var vehicleChangeRequest in ChangeRequest.VehicleChanngeRequests)
+            foreach (var vehicleChangeRequest in ChangeRequest.VehicleChangeRequests)
             {
                 switch (vehicleChangeRequest.Operation)
                 {
@@ -49,7 +49,7 @@ namespace ChangeRequests
 
         private void ProcessDriverChangeRequest()
         {
-            foreach (var driverChangeRequest in ChangeRequest.DriverChanngeRequests)
+            foreach (var driverChangeRequest in ChangeRequest.DriverChangeRequests)
             {
                 switch (driverChangeRequest.Operation)
                 {
