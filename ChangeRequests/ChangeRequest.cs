@@ -19,12 +19,14 @@ namespace ChangeRequests
     public class ChangeRequestSchedule
     {
         public ChangeRequest ChangeRequest { get; set; }
+
         public void Submit()
         {
             ProcessDriverChangeRequest();
             ProcessVehicleChangeRequest();
         }
 
+        // using lambda
         private void ProcessVehicleChangeRequest()
         {
             AddVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Add).Vehicles);
@@ -34,18 +36,21 @@ namespace ChangeRequests
         }
 
         
-
+        // Using foreach and switch
         private void ProcessDriverChangeRequest()
         {
             foreach (var driverChangeRequest in ChangeRequest.DriverChangeRequests)
             {
                 switch (driverChangeRequest.Operation)
                 {
-                    case Operations.Add: AddDriver(driverChangeRequest.Drivers);
+                    case Operations.Add:
+                        AddDriver(driverChangeRequest.Drivers);
                         break;
-                    case Operations.Delete: DeleteDriver(driverChangeRequest.Drivers);
+                    case Operations.Delete:
+                        DeleteDriver(driverChangeRequest.Drivers);
                         break;
-                    case Operations.Update: UpdateDriver(driverChangeRequest.Drivers);
+                    case Operations.Update:
+                        UpdateDriver(driverChangeRequest.Drivers);
                         break;
                     default: break;
                 }
