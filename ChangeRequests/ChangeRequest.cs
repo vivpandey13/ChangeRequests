@@ -29,9 +29,9 @@ namespace ChangeRequests
         // using lambda
         private void ProcessVehicleChangeRequest()
         {
-            AddVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Add).Vehicles);
-            DeleteVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Delete).Vehicles);
-            UpdateVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Update).Vehicles);           
+            AddVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Add)?.Vehicles);
+            DeleteVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Delete)?.Vehicles);
+            UpdateVehicle(ChangeRequest.VehicleChangeRequests.Find(x => x.Operation == Operations.Update)?.Vehicles);           
             
         }
 
@@ -59,32 +59,32 @@ namespace ChangeRequests
         #region TODO
         private void UpdateDriver(List<Driver> drivers)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void DeleteDriver(List<Driver> drivers)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void AddDriver(List<Driver> drivers)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void UpdateVehicle(List<Vehicle> vehicles)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void DeleteVehicle(List<Vehicle> vehicles)
         {
-            throw new NotImplementedException();
+            
         }
 
         private void AddVehicle(List<Vehicle> vehicles)
         {
-            throw new NotImplementedException();
+            
         }
         #endregion
     }

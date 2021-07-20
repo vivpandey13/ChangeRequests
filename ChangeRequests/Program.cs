@@ -1,4 +1,6 @@
-﻿namespace ChangeRequests
+﻿using System.Collections.Generic;
+
+namespace ChangeRequests
 {
     class Program
     {
@@ -15,18 +17,18 @@
             };
             DriverChangeRequest driverChangeRequest = new()
             {
-                Drivers = { driver },
+                Drivers = new List<Driver> { driver },
                 Operation = Operations.Add
             };
             VehicleChangeRequest vehicleChangeRequest = new()
             {
                 Operation = Operations.Add,
-                Vehicles = { vehicle}
+                Vehicles = new List<Vehicle>{ vehicle}
             };
             var changeRequest = new ChangeRequest
             {
-                DriverChangeRequests = { driverChangeRequest },
-                VehicleChangeRequests = { vehicleChangeRequest }
+                DriverChangeRequests =new List<DriverChangeRequest>{ driverChangeRequest },
+                VehicleChangeRequests = new List<VehicleChangeRequest>{ vehicleChangeRequest }
             };
             var changeRequestSchedule = new ChangeRequestSchedule
             {
