@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace ChangeRequests
 {
@@ -20,10 +19,21 @@ namespace ChangeRequests
     {
         public ChangeRequest ChangeRequest { get; set; }
 
-        public void Submit()
+        public bool Submit()
         {
-            ProcessDriverChangeRequest();
-            ProcessVehicleChangeRequest();
+            if(ChangeRequest is null)
+            {
+                return false;
+            }
+            if (ChangeRequest.DriverChangeRequests is not null)
+            {
+                ProcessDriverChangeRequest();
+            }
+            if (ChangeRequest.VehicleChangeRequests is not null)
+            {
+                ProcessVehicleChangeRequest();
+            }
+            return true;
         }
 
         // using lambda

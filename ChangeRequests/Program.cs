@@ -35,7 +35,7 @@ namespace ChangeRequests
                 ChangeRequest = changeRequest
             };
 
-            changeRequestSchedule.Submit();
+            _ = changeRequestSchedule.Submit();
         }
     }
 }
